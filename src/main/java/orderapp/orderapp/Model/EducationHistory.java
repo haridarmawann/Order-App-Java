@@ -10,22 +10,29 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import java.time.LocalDateTime;
 
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-@Document("bank_account")
-public class BankAccount {
+@Document("education_history")
+public class EducationHistory {
+
     @Id
     private String id;
     @Field("user_id")
     private String userId;
-    @Field("bank_code")
-    private String bankCode;
-    @Field("bank_name")
-    private String bankName;
-    @Field("account_name")
-    private String accountName;
-    @Field("account_number")
-    private String accountNumber;
-    @Field("payment_type")
-    private String paymentType;
+    @Field("university_name")
+    private String universityName;
+    @Field("study_program")
+    private String studyProgram;
+    @Field("entry_year")
+    private String entryYear;
+    @Field("graduation_year")
+    private String graduationYear;
+    @Field("thesis_title")
+    private String thesisTitle;
+    @Field("dissertation_supervisor")
+    private String dissertationSupervisor;
+    @Field("place")
+    private String place;
+    @Field("graduation_file")
+    private String graduationFile;
     @Field("created_at")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createdAt;
@@ -55,44 +62,68 @@ public class BankAccount {
         this.userId = userId;
     }
 
-    public String getBankCode() {
-        return bankCode;
+    public String getUniversityName() {
+        return universityName;
     }
 
-    public void setBankCode(String bankCode) {
-        this.bankCode = bankCode;
+    public void setUniversityName(String universityName) {
+        this.universityName = universityName;
     }
 
-    public String getBankName() {
-        return bankName;
+    public String getStudyProgram() {
+        return studyProgram;
     }
 
-    public void setBankName(String bankName) {
-        this.bankName = bankName;
+    public void setStudyProgram(String studyProgram) {
+        this.studyProgram = studyProgram;
     }
 
-    public String getAccountName() {
-        return accountName;
+    public String getEntryYear() {
+        return entryYear;
     }
 
-    public void setAccountName(String accountName) {
-        this.accountName = accountName;
+    public void setEntryYear(String entryYear) {
+        this.entryYear = entryYear;
     }
 
-    public String getAccountNumber() {
-        return accountNumber;
+    public String getGraduationYear() {
+        return graduationYear;
     }
 
-    public void setAccountNumber(String accountNumber) {
-        this.accountNumber = accountNumber;
+    public void setGraduationYear(String graduationYear) {
+        this.graduationYear = graduationYear;
     }
 
-    public String getPaymentType() {
-        return paymentType;
+    public String getThesisTitle() {
+        return thesisTitle;
     }
 
-    public void setPaymentType(String paymentType) {
-        this.paymentType = paymentType;
+    public void setThesisTitle(String thesisTitle) {
+        this.thesisTitle = thesisTitle;
+    }
+
+    public String getDissertationSupervisor() {
+        return dissertationSupervisor;
+    }
+
+    public void setDissertationSupervisor(String dissertationSupervisor) {
+        this.dissertationSupervisor = dissertationSupervisor;
+    }
+
+    public String getPlace() {
+        return place;
+    }
+
+    public void setPlace(String place) {
+        this.place = place;
+    }
+
+    public String getGraduationFile() {
+        return graduationFile;
+    }
+
+    public void setGraduationFile(String graduationFile) {
+        this.graduationFile = graduationFile;
     }
 
     public LocalDateTime getCreatedAt() {
@@ -127,7 +158,7 @@ public class BankAccount {
         this.updatedBy = updatedBy;
     }
 
-    public Boolean getDeleted() {
+    public boolean isDeleted() {
         return isDeleted;
     }
 

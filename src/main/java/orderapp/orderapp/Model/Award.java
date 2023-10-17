@@ -7,25 +7,27 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-@Document("bank_account")
-public class BankAccount {
+@Document("award")
+public class Award {
+
     @Id
     private String id;
     @Field("user_id")
     private String userId;
-    @Field("bank_code")
-    private String bankCode;
-    @Field("bank_name")
-    private String bankName;
-    @Field("account_name")
-    private String accountName;
-    @Field("account_number")
-    private String accountNumber;
-    @Field("payment_type")
-    private String paymentType;
+    @Field("name")
+    private String name;
+    @Field("acquisition_date")
+    private LocalDate acquisitionDate;
+    @Field("awarding_by")
+    private String awardingBy;
+    @Field("award_level")
+    private String awardLevel; // lokal, nasional , intenasional
+    @Field("award_file")
+    private String awardFile;
     @Field("created_at")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createdAt;
@@ -55,44 +57,44 @@ public class BankAccount {
         this.userId = userId;
     }
 
-    public String getBankCode() {
-        return bankCode;
+    public String getName() {
+        return name;
     }
 
-    public void setBankCode(String bankCode) {
-        this.bankCode = bankCode;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getBankName() {
-        return bankName;
+    public LocalDate getAcquisitionDate() {
+        return acquisitionDate;
     }
 
-    public void setBankName(String bankName) {
-        this.bankName = bankName;
+    public void setAcquisitionDate(LocalDate acquisitionDate) {
+        this.acquisitionDate = acquisitionDate;
     }
 
-    public String getAccountName() {
-        return accountName;
+    public String getAwardingBy() {
+        return awardingBy;
     }
 
-    public void setAccountName(String accountName) {
-        this.accountName = accountName;
+    public void setAwardingBy(String awardingBy) {
+        this.awardingBy = awardingBy;
     }
 
-    public String getAccountNumber() {
-        return accountNumber;
+    public String getAwardLevel() {
+        return awardLevel;
     }
 
-    public void setAccountNumber(String accountNumber) {
-        this.accountNumber = accountNumber;
+    public void setAwardLevel(String awardLevel) {
+        this.awardLevel = awardLevel;
     }
 
-    public String getPaymentType() {
-        return paymentType;
+    public String getAwardFile() {
+        return awardFile;
     }
 
-    public void setPaymentType(String paymentType) {
-        this.paymentType = paymentType;
+    public void setAwardFile(String awardFile) {
+        this.awardFile = awardFile;
     }
 
     public LocalDateTime getCreatedAt() {

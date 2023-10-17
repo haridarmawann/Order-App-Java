@@ -3,29 +3,30 @@ package orderapp.orderapp.Model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-@Document("bank_account")
-public class BankAccount {
-    @Id
+@Document("overseas_visit")
+public class OverseasVisit {
     private String id;
     @Field("user_id")
     private String userId;
-    @Field("bank_code")
-    private String bankCode;
-    @Field("bank_name")
-    private String bankName;
-    @Field("account_name")
-    private String accountName;
-    @Field("account_number")
-    private String accountNumber;
-    @Field("payment_type")
-    private String paymentType;
+    @Field("destination")
+    private String destination;
+    @Field("period")
+    private String period;
+    @Field("resource_cost")
+    private String resourceCost;
+    @Field("sk_number")
+    private String SkNumber;
+    @Field("sk_date")
+    private LocalDate SkDate;
+    @Field("sk_file")
+    private String SkFile;
     @Field("created_at")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createdAt;
@@ -55,44 +56,52 @@ public class BankAccount {
         this.userId = userId;
     }
 
-    public String getBankCode() {
-        return bankCode;
+    public String getDestination() {
+        return destination;
     }
 
-    public void setBankCode(String bankCode) {
-        this.bankCode = bankCode;
+    public void setDestination(String destination) {
+        this.destination = destination;
     }
 
-    public String getBankName() {
-        return bankName;
+    public String getPeriod() {
+        return period;
     }
 
-    public void setBankName(String bankName) {
-        this.bankName = bankName;
+    public void setPeriod(String period) {
+        this.period = period;
     }
 
-    public String getAccountName() {
-        return accountName;
+    public String getResourceCost() {
+        return resourceCost;
     }
 
-    public void setAccountName(String accountName) {
-        this.accountName = accountName;
+    public void setResourceCost(String resourceCost) {
+        this.resourceCost = resourceCost;
     }
 
-    public String getAccountNumber() {
-        return accountNumber;
+    public String getSkNumber() {
+        return SkNumber;
     }
 
-    public void setAccountNumber(String accountNumber) {
-        this.accountNumber = accountNumber;
+    public void setSkNumber(String skNumber) {
+        SkNumber = skNumber;
     }
 
-    public String getPaymentType() {
-        return paymentType;
+    public LocalDate getSkDate() {
+        return SkDate;
     }
 
-    public void setPaymentType(String paymentType) {
-        this.paymentType = paymentType;
+    public void setSkDate(LocalDate skDate) {
+        SkDate = skDate;
+    }
+
+    public String getSkFile() {
+        return SkFile;
+    }
+
+    public void setSkFile(String skFile) {
+        SkFile = skFile;
     }
 
     public LocalDateTime getCreatedAt() {

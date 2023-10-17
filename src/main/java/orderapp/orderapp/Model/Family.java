@@ -9,23 +9,29 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.time.LocalDateTime;
 
+// keluarga
+
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-@Document("bank_account")
-public class BankAccount {
+@Document("family")
+public class Family {
     @Id
     private String id;
     @Field("user_id")
     private String userId;
-    @Field("bank_code")
-    private String bankCode;
-    @Field("bank_name")
-    private String bankName;
-    @Field("account_name")
-    private String accountName;
-    @Field("account_number")
-    private String accountNumber;
-    @Field("payment_type")
-    private String paymentType;
+    @Field("gender")
+    private String gender;
+    @Field("birth_date")
+    private String birthDate;
+    @Field("degree")
+    private String degree;
+    @Field("note")
+    private String note;
+    @Field("hobby")
+    private String hobby;
+    @Field("file")
+    private String file;
+    @Field("type")
+    private String type; // orangtua,saudara,pasangan,anak
     @Field("created_at")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createdAt;
@@ -37,7 +43,7 @@ public class BankAccount {
     @Field("updated_by")
     private String updatedBy;
     @Field("is_deleted")
-    private Boolean isDeleted;
+    private boolean isDeleted;
 
     public String getId() {
         return id;
@@ -55,44 +61,60 @@ public class BankAccount {
         this.userId = userId;
     }
 
-    public String getBankCode() {
-        return bankCode;
+    public String getGender() {
+        return gender;
     }
 
-    public void setBankCode(String bankCode) {
-        this.bankCode = bankCode;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
-    public String getBankName() {
-        return bankName;
+    public String getBirthDate() {
+        return birthDate;
     }
 
-    public void setBankName(String bankName) {
-        this.bankName = bankName;
+    public void setBirthDate(String birthDate) {
+        this.birthDate = birthDate;
     }
 
-    public String getAccountName() {
-        return accountName;
+    public String getDegree() {
+        return degree;
     }
 
-    public void setAccountName(String accountName) {
-        this.accountName = accountName;
+    public void setDegree(String degree) {
+        this.degree = degree;
     }
 
-    public String getAccountNumber() {
-        return accountNumber;
+    public String getNote() {
+        return note;
     }
 
-    public void setAccountNumber(String accountNumber) {
-        this.accountNumber = accountNumber;
+    public void setNote(String note) {
+        this.note = note;
     }
 
-    public String getPaymentType() {
-        return paymentType;
+    public String getHobby() {
+        return hobby;
     }
 
-    public void setPaymentType(String paymentType) {
-        this.paymentType = paymentType;
+    public void setHobby(String hobby) {
+        this.hobby = hobby;
+    }
+
+    public String getFile() {
+        return file;
+    }
+
+    public void setFile(String file) {
+        this.file = file;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public LocalDateTime getCreatedAt() {
@@ -127,11 +149,11 @@ public class BankAccount {
         this.updatedBy = updatedBy;
     }
 
-    public Boolean getDeleted() {
+    public boolean isDeleted() {
         return isDeleted;
     }
 
-    public void setDeleted(Boolean deleted) {
+    public void setDeleted(boolean deleted) {
         isDeleted = deleted;
     }
 }

@@ -1,31 +1,33 @@
 package orderapp.orderapp.Model;
 
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-@Document("bank_account")
-public class BankAccount {
-    @Id
+@Document("course_history")
+public class CourseHistory {
     private String id;
     @Field("user_id")
     private String userId;
-    @Field("bank_code")
-    private String bankCode;
-    @Field("bank_name")
-    private String bankName;
-    @Field("account_name")
-    private String accountName;
-    @Field("account_number")
-    private String accountNumber;
-    @Field("payment_type")
-    private String paymentType;
+    @Field("name")
+    private String name;
+    @Field("start_date")
+    private LocalDate startDate;
+    @Field("completion_date")
+    private LocalDate completionDate;
+    @Field("place")
+    private String place;
+    @Field("promoter")
+    private String promoter; // penyelenggara
+    @Field("certification_file")
+    private String certificationFile;
     @Field("created_at")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createdAt;
@@ -55,44 +57,52 @@ public class BankAccount {
         this.userId = userId;
     }
 
-    public String getBankCode() {
-        return bankCode;
+    public String getName() {
+        return name;
     }
 
-    public void setBankCode(String bankCode) {
-        this.bankCode = bankCode;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getBankName() {
-        return bankName;
+    public LocalDate getStartDate() {
+        return startDate;
     }
 
-    public void setBankName(String bankName) {
-        this.bankName = bankName;
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
     }
 
-    public String getAccountName() {
-        return accountName;
+    public LocalDate getCompletionDate() {
+        return completionDate;
     }
 
-    public void setAccountName(String accountName) {
-        this.accountName = accountName;
+    public void setCompletionDate(LocalDate completionDate) {
+        this.completionDate = completionDate;
     }
 
-    public String getAccountNumber() {
-        return accountNumber;
+    public String getPlace() {
+        return place;
     }
 
-    public void setAccountNumber(String accountNumber) {
-        this.accountNumber = accountNumber;
+    public void setPlace(String place) {
+        this.place = place;
     }
 
-    public String getPaymentType() {
-        return paymentType;
+    public String getPromoter() {
+        return promoter;
     }
 
-    public void setPaymentType(String paymentType) {
-        this.paymentType = paymentType;
+    public void setPromoter(String promoter) {
+        this.promoter = promoter;
+    }
+
+    public String getCertificationFile() {
+        return certificationFile;
+    }
+
+    public void setCertificationFile(String certificationFile) {
+        this.certificationFile = certificationFile;
     }
 
     public LocalDateTime getCreatedAt() {

@@ -1,41 +1,78 @@
 package orderapp.orderapp.Model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import orderapp.orderapp.Model.DTO.Address;
+import orderapp.orderapp.Model.DTO.PhysicalDescription;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 @Document("employee")
 public class Employee {
+    @Id
     private String id;
+    @Field("user_id")
+    private String userId; // userId simsdm lama
     @Field("sister_uuid")
     private String sisterUuid;
     @Field("front_degree")
     private String frontDegree;
+    @Field("name")
     private String name;
     @Field("behind_degree")
     private String behindDegree;
+    @Field("gender")
     private String gender;
+    @Field("nip")
     private String nip;
+    @Field("nidn")
     private String nidn; // nomor induk dosen nasional
     private String email;
     @Field("email_usu")
     private String emailUSU;
     private String photo;
     private List<Address> addresses;
+    @Field("physical_description")
+    private PhysicalDescription physicalDescription;
+    @Field("npwp")
     private String npwp;
-
+    @Field("birth_date")
+    private LocalDate BirthDate;
+    @Field("birth_place")
+    private String birthPlace;
+    @Field("birth_file")
+    private String birth_file;
+    @Field("status")
     private String status; // aktif,pensiun, meninggal,tugas belajar,izin belajar,berhenti, dipecat
-
+    @Field("ptkp")
+    private String ptkp;
+    @Field("employee_type")
+    private String employeeType;
+    @Field("password")
+    private String password;
+    @Field("reset_password_key")
+    private String resetPasswordKey;
     @Field("is_deleted")
-    private boolean isDeleted;
+    private Boolean isDeleted;
+    @Field("created_at")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime createdAt;
+    @Field("updated_at")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime updatedAt;
+    @Field("created_by")
+    private String createdBy;
+    @Field("updated_by")
+    private String updatedBy;
 
-    //esc
-
+    // untuk workUnit Besok mau ditanya kak yeni
 
     public String getId() {
         return id;
@@ -43,6 +80,22 @@ public class Employee {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getSisterUuid() {
+        return sisterUuid;
+    }
+
+    public void setSisterUuid(String sisterUuid) {
+        this.sisterUuid = sisterUuid;
     }
 
     public String getFrontDegree() {
@@ -117,12 +170,52 @@ public class Employee {
         this.photo = photo;
     }
 
+    public List<Address> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(List<Address> addresses) {
+        this.addresses = addresses;
+    }
+
+    public PhysicalDescription getPhysicalDescription() {
+        return physicalDescription;
+    }
+
+    public void setPhysicalDescription(PhysicalDescription physicalDescription) {
+        this.physicalDescription = physicalDescription;
+    }
+
     public String getNpwp() {
         return npwp;
     }
 
     public void setNpwp(String npwp) {
         this.npwp = npwp;
+    }
+
+    public LocalDate getBirthDate() {
+        return BirthDate;
+    }
+
+    public void setBirthDate(LocalDate birthDate) {
+        BirthDate = birthDate;
+    }
+
+    public String getBirthPlace() {
+        return birthPlace;
+    }
+
+    public void setBirthPlace(String birthPlace) {
+        this.birthPlace = birthPlace;
+    }
+
+    public String getBirth_file() {
+        return birth_file;
+    }
+
+    public void setBirth_file(String birth_file) {
+        this.birth_file = birth_file;
     }
 
     public String getStatus() {
@@ -133,27 +226,75 @@ public class Employee {
         this.status = status;
     }
 
-    public List<Address> getAddresses() {
-        return addresses;
+    public String getPtkp() {
+        return ptkp;
     }
 
-    public void setAddresses(List<Address> addresses) {
-        this.addresses = addresses;
+    public void setPtkp(String ptkp) {
+        this.ptkp = ptkp;
     }
 
-    public String getSisterUuid() {
-        return sisterUuid;
+    public String getEmployeeType() {
+        return employeeType;
     }
 
-    public void setSisterUuid(String sisterUuid) {
-        this.sisterUuid = sisterUuid;
+    public void setEmployeeType(String employeeType) {
+        this.employeeType = employeeType;
     }
 
-    public boolean isDeleted() {
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getResetPasswordKey() {
+        return resetPasswordKey;
+    }
+
+    public void setResetPasswordKey(String resetPasswordKey) {
+        this.resetPasswordKey = resetPasswordKey;
+    }
+
+    public Boolean getDeleted() {
         return isDeleted;
     }
 
-    public void setDeleted(boolean deleted) {
+    public void setDeleted(Boolean deleted) {
         isDeleted = deleted;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public String getUpdatedBy() {
+        return updatedBy;
+    }
+
+    public void setUpdatedBy(String updatedBy) {
+        this.updatedBy = updatedBy;
     }
 }

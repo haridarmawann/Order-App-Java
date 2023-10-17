@@ -7,25 +7,28 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+// jabatan fungsional
+
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-@Document("bank_account")
-public class BankAccount {
+@Document("functional_position")
+public class FunctionalPosition {
     @Id
     private String id;
     @Field("user_id")
     private String userId;
-    @Field("bank_code")
-    private String bankCode;
-    @Field("bank_name")
-    private String bankName;
-    @Field("account_name")
-    private String accountName;
-    @Field("account_number")
-    private String accountNumber;
-    @Field("payment_type")
-    private String paymentType;
+    @Field("position_name")
+    private String positionName;
+    @Field("sk_number")
+    private String skNumber;
+    @Field("sk_date")
+    private LocalDate skDate;
+    @Field("sk_file")
+    private String skFile;
+    @Field("note")
+    private String note;
     @Field("created_at")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createdAt;
@@ -37,7 +40,7 @@ public class BankAccount {
     @Field("updated_by")
     private String updatedBy;
     @Field("is_deleted")
-    private Boolean isDeleted;
+    private boolean isDeleted;
 
     public String getId() {
         return id;
@@ -55,44 +58,44 @@ public class BankAccount {
         this.userId = userId;
     }
 
-    public String getBankCode() {
-        return bankCode;
+    public String getPositionName() {
+        return positionName;
     }
 
-    public void setBankCode(String bankCode) {
-        this.bankCode = bankCode;
+    public void setPositionName(String positionName) {
+        this.positionName = positionName;
     }
 
-    public String getBankName() {
-        return bankName;
+    public String getSkNumber() {
+        return skNumber;
     }
 
-    public void setBankName(String bankName) {
-        this.bankName = bankName;
+    public void setSkNumber(String skNumber) {
+        this.skNumber = skNumber;
     }
 
-    public String getAccountName() {
-        return accountName;
+    public LocalDate getSkDate() {
+        return skDate;
     }
 
-    public void setAccountName(String accountName) {
-        this.accountName = accountName;
+    public void setSkDate(LocalDate skDate) {
+        this.skDate = skDate;
     }
 
-    public String getAccountNumber() {
-        return accountNumber;
+    public String getSkFile() {
+        return skFile;
     }
 
-    public void setAccountNumber(String accountNumber) {
-        this.accountNumber = accountNumber;
+    public void setSkFile(String skFile) {
+        this.skFile = skFile;
     }
 
-    public String getPaymentType() {
-        return paymentType;
+    public String getNote() {
+        return note;
     }
 
-    public void setPaymentType(String paymentType) {
-        this.paymentType = paymentType;
+    public void setNote(String note) {
+        this.note = note;
     }
 
     public LocalDateTime getCreatedAt() {
@@ -127,11 +130,11 @@ public class BankAccount {
         this.updatedBy = updatedBy;
     }
 
-    public Boolean getDeleted() {
+    public boolean isDeleted() {
         return isDeleted;
     }
 
-    public void setDeleted(Boolean deleted) {
+    public void setDeleted(boolean deleted) {
         isDeleted = deleted;
     }
 }

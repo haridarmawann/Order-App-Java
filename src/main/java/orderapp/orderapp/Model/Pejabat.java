@@ -6,7 +6,7 @@ import orderapp.orderapp.Model.reference.EmployeePosition;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
-
+// belum fix
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 @Document("pejabat")
 public class Pejabat {

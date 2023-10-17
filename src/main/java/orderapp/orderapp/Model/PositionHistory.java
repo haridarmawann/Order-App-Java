@@ -6,12 +6,14 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.time.LocalDateTime;
+
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 @Document("position_history")
 public class PositionHistory {
     private String id;
-    @Field("employee_id")
-    private String employeeId;
+    @Field("user_id")
+    private String userId; // userId(ObjectId)
     private String startDate;
     private String skNumber;
     private String skFile;
@@ -19,10 +21,10 @@ public class PositionHistory {
     private String note;
     @Field("created_at")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
-    private String createdAt;
+    private LocalDateTime createdAt;
     @Field("updated_at")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
-    private String updatedAt;
+    private LocalDateTime updatedAt;
     @Field("created_by")
     private String createdBy;
     @Field("updated_by")
@@ -36,6 +38,14 @@ public class PositionHistory {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getStartDate() {
@@ -78,19 +88,19 @@ public class PositionHistory {
         this.note = note;
     }
 
-    public String getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(String createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
-    public String getUpdatedAt() {
+    public LocalDateTime getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(String updatedAt) {
+    public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
 
