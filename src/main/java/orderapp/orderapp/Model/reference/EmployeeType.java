@@ -7,10 +7,12 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.time.LocalDateTime;
+
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 @Document("employee_type")
 public class EmployeeType {
-    @Id
+
     private String id;
     @Field("title")
     private String title; // dosen tetap, dosen tidak tetap, dosen pns , tenaga kependidikan pns, tenaga kependidikan tetap, tenaga kependidikan tidak tetap
@@ -18,10 +20,10 @@ public class EmployeeType {
     private String slug;
     @Field("created_at")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
-    private String createdAt;
+    private LocalDateTime createdAt;
     @Field("updated_at")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
-    private String updatedAt;
+    private LocalDateTime updatedAt;
     @Field("created_by")
     private String createdBy;
     @Field("updated_by")
@@ -53,19 +55,19 @@ public class EmployeeType {
         this.title = title;
     }
 
-    public String getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(String createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
-    public String getUpdatedAt() {
+    public LocalDateTime getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(String updatedAt) {
+    public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
 
