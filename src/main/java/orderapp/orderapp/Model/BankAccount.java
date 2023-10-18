@@ -15,17 +15,19 @@ public class BankAccount {
     @Id
     private String id;
     @Field("user_id")
-    private String userId;
-    @Field("bank_code")
-    private String bankCode;
+    private String userId; // objectId
+    @Field("user_id_simsdm")
+    private String userIdSimsdm; // userIdSimsdmLama
+    @Field("bank_id")
+    private String bankId;
     @Field("bank_name")
     private String bankName;
     @Field("account_name")
     private String accountName;
     @Field("account_number")
     private String accountNumber;
-    @Field("payment_type")
-    private String paymentType;
+    @Field("payment_id")
+    private Integer paymentId;
     @Field("created_at")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createdAt;
@@ -55,12 +57,20 @@ public class BankAccount {
         this.userId = userId;
     }
 
-    public String getBankCode() {
-        return bankCode;
+    public String getUserIdSimsdm() {
+        return userIdSimsdm;
     }
 
-    public void setBankCode(String bankCode) {
-        this.bankCode = bankCode;
+    public void setUserIdSimsdm(String userIdSimsdm) {
+        this.userIdSimsdm = userIdSimsdm;
+    }
+
+    public String getBankId() {
+        return bankId;
+    }
+
+    public void setBankId(String bankId) {
+        this.bankId = bankId;
     }
 
     public String getBankName() {
@@ -87,12 +97,12 @@ public class BankAccount {
         this.accountNumber = accountNumber;
     }
 
-    public String getPaymentType() {
-        return paymentType;
+    public Integer getPaymentId() {
+        return paymentId;
     }
 
-    public void setPaymentType(String paymentType) {
-        this.paymentType = paymentType;
+    public void setPaymentId(Integer paymentId) {
+        this.paymentId = paymentId;
     }
 
     public LocalDateTime getCreatedAt() {

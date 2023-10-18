@@ -1,9 +1,9 @@
 package orderapp.orderapp.Model;
 
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -11,23 +11,33 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-@Document("course_history")
-public class CourseHistory {
+@Document("organizational_experience")
+public class OrganizationalExperience {
+
+    @Id
     private String id;
-    @Field("user_id")
+    @Field("userId")
     private String userId;
-    @Field("name")
-    private String name;
+    @Field("organization_name")
+    private String organizationName;
+    @Field("positon")
+    private String position;
     @Field("start_date")
     private LocalDate startDate;
-    @Field("completion_date")
-    private LocalDate completionDate;
+    @Field("end_date")
+    private LocalDate endDate;
     @Field("place")
     private String place;
-    @Field("promoter")
-    private String promoter; // penyelenggara
-    @Field("certification_file")
-    private String certificationFile;
+    @Field("leader_name")
+    private String leaderName;
+    @Field("official_duty")
+    private String officialDuty;
+    @Field("organization_level")
+    private String organizationLevel;
+    @Field("note")
+    private String note;
+    @Field("sk_file")
+    private String skFile;
     @Field("created_at")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createdAt;
@@ -39,7 +49,7 @@ public class CourseHistory {
     @Field("updated_by")
     private String updatedBy;
     @Field("is_deleted")
-    private Boolean isDeleted;
+    private boolean isDeleted;
 
     public String getId() {
         return id;
@@ -57,12 +67,20 @@ public class CourseHistory {
         this.userId = userId;
     }
 
-    public String getName() {
-        return name;
+    public String getOrganizationName() {
+        return organizationName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setOrganizationName(String organizationName) {
+        this.organizationName = organizationName;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 
     public LocalDate getStartDate() {
@@ -73,12 +91,12 @@ public class CourseHistory {
         this.startDate = startDate;
     }
 
-    public LocalDate getCompletionDate() {
-        return completionDate;
+    public LocalDate getEndDate() {
+        return endDate;
     }
 
-    public void setCompletionDate(LocalDate completionDate) {
-        this.completionDate = completionDate;
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
     }
 
     public String getPlace() {
@@ -89,20 +107,44 @@ public class CourseHistory {
         this.place = place;
     }
 
-    public String getPromoter() {
-        return promoter;
+    public String getLeaderName() {
+        return leaderName;
     }
 
-    public void setPromoter(String promoter) {
-        this.promoter = promoter;
+    public void setLeaderName(String leaderName) {
+        this.leaderName = leaderName;
     }
 
-    public String getCertificationFile() {
-        return certificationFile;
+    public String getOfficialDuty() {
+        return officialDuty;
     }
 
-    public void setCertificationFile(String certificationFile) {
-        this.certificationFile = certificationFile;
+    public void setOfficialDuty(String officialDuty) {
+        this.officialDuty = officialDuty;
+    }
+
+    public String getOrganizationLevel() {
+        return organizationLevel;
+    }
+
+    public void setOrganizationLevel(String organizationLevel) {
+        this.organizationLevel = organizationLevel;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    public String getSkFile() {
+        return skFile;
+    }
+
+    public void setSkFile(String skFile) {
+        this.skFile = skFile;
     }
 
     public LocalDateTime getCreatedAt() {
@@ -137,11 +179,11 @@ public class CourseHistory {
         this.updatedBy = updatedBy;
     }
 
-    public Boolean getDeleted() {
+    public boolean isDeleted() {
         return isDeleted;
     }
 
-    public void setDeleted(Boolean deleted) {
+    public void setDeleted(boolean deleted) {
         isDeleted = deleted;
     }
 }

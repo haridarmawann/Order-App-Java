@@ -22,16 +22,16 @@ public class OverseasVisit {
     @Field("resource_cost")
     private String resourceCost;
     @Field("sk_number")
-    private String SkNumber;
+    private String skNumber;
     @Field("sk_date")
-    private LocalDate SkDate;
+    private LocalDate skDate;
     @Field("sk_file")
-    private String SkFile;
+    private String skFile;
     @Field("created_at")
-    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createdAt;
     @Field("updated_at")
-    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime updatedAt;
     @Field("created_by")
     private String createdBy;
@@ -39,6 +39,7 @@ public class OverseasVisit {
     private String updatedBy;
     @Field("is_deleted")
     private Boolean isDeleted;
+
 
     public String getId() {
         return id;
@@ -81,27 +82,27 @@ public class OverseasVisit {
     }
 
     public String getSkNumber() {
-        return SkNumber;
+        return skNumber;
     }
 
     public void setSkNumber(String skNumber) {
-        SkNumber = skNumber;
+        this.skNumber = skNumber;
     }
 
     public LocalDate getSkDate() {
-        return SkDate;
+        return skDate;
     }
 
     public void setSkDate(LocalDate skDate) {
-        SkDate = skDate;
+        this.skDate = skDate;
     }
 
     public String getSkFile() {
-        return SkFile;
+        return skFile;
     }
 
     public void setSkFile(String skFile) {
-        SkFile = skFile;
+        this.skFile = skFile;
     }
 
     public LocalDateTime getCreatedAt() {

@@ -7,32 +7,26 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-@Document("education_history")
-public class EducationHistory {
-
+@Document("lecturer_experience")
+public class LecturerExperience {
     @Id
     private String id;
     @Field("user_id")
     private String userId;
     @Field("university_name")
-    private String universityName;
-    @Field("study_program")
-    private String studyProgram;
-    @Field("entry_year")
-    private String entryYear;
-    @Field("graduation_year")
-    private String graduationYear;
-    @Field("thesis_title")
-    private String thesisTitle;
-    @Field("dissertation_supervisor")
-    private String dissertationSupervisor;
-    @Field("place")
-    private String place;
-    @Field("graduation_file")
-    private String graduationFile;
+    private String UniversityName;
+    @Field("experience_level")
+    private String experienceLevel;
+    @Field("start_date")
+    private LocalDate startDate;
+    @Field("end_date")
+    private LocalDate endDate;
+    @Field("sk_file")
+    private String skFile;
     @Field("created_at")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createdAt;
@@ -63,67 +57,43 @@ public class EducationHistory {
     }
 
     public String getUniversityName() {
-        return universityName;
+        return UniversityName;
     }
 
     public void setUniversityName(String universityName) {
-        this.universityName = universityName;
+        UniversityName = universityName;
     }
 
-    public String getStudyProgram() {
-        return studyProgram;
+    public String getExperienceLevel() {
+        return experienceLevel;
     }
 
-    public void setStudyProgram(String studyProgram) {
-        this.studyProgram = studyProgram;
+    public void setExperienceLevel(String experienceLevel) {
+        this.experienceLevel = experienceLevel;
     }
 
-    public String getEntryYear() {
-        return entryYear;
+    public LocalDate getStartDate() {
+        return startDate;
     }
 
-    public void setEntryYear(String entryYear) {
-        this.entryYear = entryYear;
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
     }
 
-    public String getGraduationYear() {
-        return graduationYear;
+    public LocalDate getEndDate() {
+        return endDate;
     }
 
-    public void setGraduationYear(String graduationYear) {
-        this.graduationYear = graduationYear;
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
     }
 
-    public String getThesisTitle() {
-        return thesisTitle;
+    public String getSkFile() {
+        return skFile;
     }
 
-    public void setThesisTitle(String thesisTitle) {
-        this.thesisTitle = thesisTitle;
-    }
-
-    public String getDissertationSupervisor() {
-        return dissertationSupervisor;
-    }
-
-    public void setDissertationSupervisor(String dissertationSupervisor) {
-        this.dissertationSupervisor = dissertationSupervisor;
-    }
-
-    public String getPlace() {
-        return place;
-    }
-
-    public void setPlace(String place) {
-        this.place = place;
-    }
-
-    public String getGraduationFile() {
-        return graduationFile;
-    }
-
-    public void setGraduationFile(String graduationFile) {
-        this.graduationFile = graduationFile;
+    public void setSkFile(String skFile) {
+        this.skFile = skFile;
     }
 
     public LocalDateTime getCreatedAt() {
@@ -158,7 +128,7 @@ public class EducationHistory {
         this.updatedBy = updatedBy;
     }
 
-    public boolean isDeleted() {
+    public Boolean getDeleted() {
         return isDeleted;
     }
 

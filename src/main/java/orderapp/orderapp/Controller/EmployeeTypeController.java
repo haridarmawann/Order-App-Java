@@ -1,6 +1,6 @@
 package orderapp.orderapp.Controller;
 
-import orderapp.orderapp.Helper.ResponseWriter;
+import orderapp.orderapp.tools.ResponseWriter;
 import orderapp.orderapp.Model.DTO.ResponseBody;
 import orderapp.orderapp.Model.reference.EmployeeType;
 import orderapp.orderapp.Service.EmployeeTypeService;

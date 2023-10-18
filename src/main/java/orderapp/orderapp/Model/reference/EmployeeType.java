@@ -13,7 +13,10 @@ import java.time.LocalDateTime;
 @Document("employee_type")
 public class EmployeeType {
 
+    @Id
     private String id;
+    @Field("type_id")
+    private String typeId;
     @Field("title")
     private String title; // dosen tetap, dosen tidak tetap, dosen pns , tenaga kependidikan pns, tenaga kependidikan tetap, tenaga kependidikan tidak tetap
     @Field("slug")
@@ -37,6 +40,14 @@ public class EmployeeType {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getTypeId() {
+        return typeId;
+    }
+
+    public void setTypeId(String typeId) {
+        this.typeId = typeId;
     }
 
     public String getTitle() {

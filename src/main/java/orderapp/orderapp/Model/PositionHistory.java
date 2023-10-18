@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
@@ -14,10 +15,14 @@ public class PositionHistory {
     private String id;
     @Field("user_id")
     private String userId; // userId(ObjectId)
+    @Field("start_date")
     private String startDate;
+    @Field("sk_number")
     private String skNumber;
+    @Field("sk_file")
     private String skFile;
-    private String skDate;
+    @Field("sk_date")
+    private LocalDate skDate;
     private String note;
     @Field("created_at")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
@@ -72,11 +77,11 @@ public class PositionHistory {
         this.skFile = skFile;
     }
 
-    public String getSkDate() {
+    public LocalDate getSkDate() {
         return skDate;
     }
 
-    public void setSkDate(String skDate) {
+    public void setSkDate(LocalDate skDate) {
         this.skDate = skDate;
     }
 

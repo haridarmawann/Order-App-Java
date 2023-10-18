@@ -34,11 +34,20 @@ public class Employee {
     private String nip;
     @Field("nidn")
     private String nidn; // nomor induk dosen nasional
+    @Field("email")
     private String email;
     @Field("email_usu")
     private String emailUSU;
+    @Field("photo")
     private String photo;
-    private List<Address> addresses;
+    @Field("address")
+    private Address address;
+    @Field("religion")
+    private String religion;
+    @Field("phone")
+    private String phone;
+    @Field("marital_status")
+    private String maritalStatus;
     @Field("physical_description")
     private PhysicalDescription physicalDescription;
     @Field("npwp")
@@ -48,17 +57,27 @@ public class Employee {
     @Field("birth_place")
     private String birthPlace;
     @Field("birth_file")
-    private String birth_file;
+    private String birthFile;
     @Field("status")
     private String status; // aktif,pensiun, meninggal,tugas belajar,izin belajar,berhenti, dipecat
-    @Field("ptkp")
-    private String ptkp;
-    @Field("employee_type")
-    private String employeeType;
+    @Field("type")
+    private String type; // jenis kepegawaian
+    @Field("type_name")
+    private String typeName; // nama jenis kepegawaian
     @Field("password")
     private String password;
     @Field("reset_password_key")
     private String resetPasswordKey;
+    @Field("work_unit_id")
+    private String workUnitId;
+    @Field("work_unit_init")
+    private String workUnitInit;
+    @Field("work_unit_name")
+    private String workUnitName;
+    @Field("study_program_id")
+    private String studyProgramId;
+    @Field("study_program")
+    private String studyProgram;
     @Field("is_deleted")
     private Boolean isDeleted;
     @Field("created_at")
@@ -72,7 +91,6 @@ public class Employee {
     @Field("updated_by")
     private String updatedBy;
 
-    // untuk workUnit Besok mau ditanya kak yeni
 
     public String getId() {
         return id;
@@ -170,12 +188,36 @@ public class Employee {
         this.photo = photo;
     }
 
-    public List<Address> getAddresses() {
-        return addresses;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setAddresses(List<Address> addresses) {
-        this.addresses = addresses;
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public String getReligion() {
+        return religion;
+    }
+
+    public void setReligion(String religion) {
+        this.religion = religion;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getMaritalStatus() {
+        return maritalStatus;
+    }
+
+    public void setMaritalStatus(String maritalStatus) {
+        this.maritalStatus = maritalStatus;
     }
 
     public PhysicalDescription getPhysicalDescription() {
@@ -210,12 +252,12 @@ public class Employee {
         this.birthPlace = birthPlace;
     }
 
-    public String getBirth_file() {
-        return birth_file;
+    public String getBirthFile() {
+        return birthFile;
     }
 
-    public void setBirth_file(String birth_file) {
-        this.birth_file = birth_file;
+    public void setBirthFile(String birthFile) {
+        this.birthFile = birthFile;
     }
 
     public String getStatus() {
@@ -226,20 +268,20 @@ public class Employee {
         this.status = status;
     }
 
-    public String getPtkp() {
-        return ptkp;
+    public String getType() {
+        return type;
     }
 
-    public void setPtkp(String ptkp) {
-        this.ptkp = ptkp;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public String getEmployeeType() {
-        return employeeType;
+    public String getTypeName() {
+        return typeName;
     }
 
-    public void setEmployeeType(String employeeType) {
-        this.employeeType = employeeType;
+    public void setTypeName(String typeName) {
+        this.typeName = typeName;
     }
 
     public String getPassword() {
@@ -256,6 +298,46 @@ public class Employee {
 
     public void setResetPasswordKey(String resetPasswordKey) {
         this.resetPasswordKey = resetPasswordKey;
+    }
+
+    public String getWorkUnitId() {
+        return workUnitId;
+    }
+
+    public void setWorkUnitId(String workUnitId) {
+        this.workUnitId = workUnitId;
+    }
+
+    public String getWorkUnitInit() {
+        return workUnitInit;
+    }
+
+    public void setWorkUnitInit(String workUnitInit) {
+        this.workUnitInit = workUnitInit;
+    }
+
+    public String getWorkUnitName() {
+        return workUnitName;
+    }
+
+    public void setWorkUnitName(String workUnitName) {
+        this.workUnitName = workUnitName;
+    }
+
+    public String getStudyProgramId() {
+        return studyProgramId;
+    }
+
+    public void setStudyProgramId(String studyProgramId) {
+        this.studyProgramId = studyProgramId;
+    }
+
+    public String getStudyProgram() {
+        return studyProgram;
+    }
+
+    public void setStudyProgram(String studyProgram) {
+        this.studyProgram = studyProgram;
     }
 
     public Boolean getDeleted() {

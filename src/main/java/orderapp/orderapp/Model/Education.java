@@ -7,12 +7,11 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-@Document("award")
-public class Award {
+@Document("education")
+public class Education {
 
     @Id
     private String id;
@@ -20,16 +19,22 @@ public class Award {
     private String userId;
     @Field("user_id_simsdm")
     private String userIdSimsdm; // userIdSimsdmLama
-    @Field("name")
-    private String name;
-    @Field("acquisition_date")
-    private LocalDate acquisitionDate;
-    @Field("awarding_by")
-    private String awardingBy;
-    @Field("award_level")
-    private String awardLevel; // lokal, nasional , intenasional
-    @Field("award_file")
-    private String awardFile;
+    @Field("institution_name")
+    private String institutionName;
+    @Field("study_program")
+    private String studyProgram;
+    @Field("entry_year")
+    private String entryYear;
+    @Field("graduation_year")
+    private String graduateYear;
+    @Field("thesis_title")
+    private String thesisTitle;
+    @Field("promotor")
+    private String promotor;
+    @Field("place")
+    private String place;
+    @Field("graduation_file")
+    private String graduationFile;
     @Field("created_at")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createdAt;
@@ -67,44 +72,68 @@ public class Award {
         this.userIdSimsdm = userIdSimsdm;
     }
 
-    public String getName() {
-        return name;
+    public String getInstitutionName() {
+        return institutionName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setInstitutionName(String institutionName) {
+        this.institutionName = institutionName;
     }
 
-    public LocalDate getAcquisitionDate() {
-        return acquisitionDate;
+    public String getStudyProgram() {
+        return studyProgram;
     }
 
-    public void setAcquisitionDate(LocalDate acquisitionDate) {
-        this.acquisitionDate = acquisitionDate;
+    public void setStudyProgram(String studyProgram) {
+        this.studyProgram = studyProgram;
     }
 
-    public String getAwardingBy() {
-        return awardingBy;
+    public String getEntryYear() {
+        return entryYear;
     }
 
-    public void setAwardingBy(String awardingBy) {
-        this.awardingBy = awardingBy;
+    public void setEntryYear(String entryYear) {
+        this.entryYear = entryYear;
     }
 
-    public String getAwardLevel() {
-        return awardLevel;
+    public String getGraduateYear() {
+        return graduateYear;
     }
 
-    public void setAwardLevel(String awardLevel) {
-        this.awardLevel = awardLevel;
+    public void setGraduateYear(String graduateYear) {
+        this.graduateYear = graduateYear;
     }
 
-    public String getAwardFile() {
-        return awardFile;
+    public String getThesisTitle() {
+        return thesisTitle;
     }
 
-    public void setAwardFile(String awardFile) {
-        this.awardFile = awardFile;
+    public void setThesisTitle(String thesisTitle) {
+        this.thesisTitle = thesisTitle;
+    }
+
+    public String getPromotor() {
+        return promotor;
+    }
+
+    public void setPromotor(String promotor) {
+        this.promotor = promotor;
+    }
+
+    public String getPlace() {
+        return place;
+    }
+
+    public void setPlace(String place) {
+        this.place = place;
+    }
+
+    public String getGraduationFile() {
+        return graduationFile;
+    }
+
+    public void setGraduationFile(String graduationFile) {
+        this.graduationFile = graduationFile;
     }
 
     public LocalDateTime getCreatedAt() {

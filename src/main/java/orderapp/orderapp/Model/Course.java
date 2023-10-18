@@ -1,9 +1,9 @@
 package orderapp.orderapp.Model;
 
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -11,30 +11,30 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-@Document("award")
-public class Award {
-
-    @Id
+@Document("course")
+public class Course {
     private String id;
     @Field("user_id")
     private String userId;
     @Field("user_id_simsdm")
     private String userIdSimsdm; // userIdSimsdmLama
-    @Field("name")
-    private String name;
-    @Field("acquisition_date")
-    private LocalDate acquisitionDate;
-    @Field("awarding_by")
-    private String awardingBy;
-    @Field("award_level")
-    private String awardLevel; // lokal, nasional , intenasional
-    @Field("award_file")
-    private String awardFile;
+    @Field("course_name")
+    private String courseName;
+    @Field("start_date")
+    private LocalDate startDate;
+    @Field("completion_date")
+    private LocalDate completionDate;
+    @Field("place")
+    private String place;
+    @Field("promoter")
+    private String promoter; // penyelenggara
+    @Field("certification_file")
+    private String certificationFile;
     @Field("created_at")
-    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createdAt;
     @Field("updated_at")
-    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime updatedAt;
     @Field("created_by")
     private String createdBy;
@@ -67,44 +67,52 @@ public class Award {
         this.userIdSimsdm = userIdSimsdm;
     }
 
-    public String getName() {
-        return name;
+    public String getCourseName() {
+        return courseName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
     }
 
-    public LocalDate getAcquisitionDate() {
-        return acquisitionDate;
+    public LocalDate getStartDate() {
+        return startDate;
     }
 
-    public void setAcquisitionDate(LocalDate acquisitionDate) {
-        this.acquisitionDate = acquisitionDate;
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
     }
 
-    public String getAwardingBy() {
-        return awardingBy;
+    public LocalDate getCompletionDate() {
+        return completionDate;
     }
 
-    public void setAwardingBy(String awardingBy) {
-        this.awardingBy = awardingBy;
+    public void setCompletionDate(LocalDate completionDate) {
+        this.completionDate = completionDate;
     }
 
-    public String getAwardLevel() {
-        return awardLevel;
+    public String getPlace() {
+        return place;
     }
 
-    public void setAwardLevel(String awardLevel) {
-        this.awardLevel = awardLevel;
+    public void setPlace(String place) {
+        this.place = place;
     }
 
-    public String getAwardFile() {
-        return awardFile;
+    public String getPromoter() {
+        return promoter;
     }
 
-    public void setAwardFile(String awardFile) {
-        this.awardFile = awardFile;
+    public void setPromoter(String promoter) {
+        this.promoter = promoter;
+    }
+
+    public String getCertificationFile() {
+        return certificationFile;
+    }
+
+    public void setCertificationFile(String certificationFile) {
+        this.certificationFile = certificationFile;
     }
 
     public LocalDateTime getCreatedAt() {
@@ -146,4 +154,5 @@ public class Award {
     public void setDeleted(Boolean deleted) {
         isDeleted = deleted;
     }
+
 }
