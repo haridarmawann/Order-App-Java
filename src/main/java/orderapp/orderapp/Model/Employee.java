@@ -70,8 +70,8 @@ public class Employee {
     private String resetPasswordKey;
     @Field("work_unit_id")
     private String workUnitId;
-    @Field("work_unit_init")
-    private String workUnitInit;
+    @Field("work_init")
+    private String workInit;
     @Field("work_unit_name")
     private String workUnitName;
     @Field("study_program_id")
@@ -308,12 +308,12 @@ public class Employee {
         this.workUnitId = workUnitId;
     }
 
-    public String getWorkUnitInit() {
-        return workUnitInit;
+    public String getWorkInit() {
+        return workInit;
     }
 
-    public void setWorkUnitInit(String workUnitInit) {
-        this.workUnitInit = workUnitInit;
+    public void setWorkInit(String workInit) {
+        this.workInit = workInit;
     }
 
     public String getWorkUnitName() {
