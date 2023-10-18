@@ -7,8 +7,8 @@ import org.springframework.data.mongodb.core.mapping.Field;
 public class Rank {
     @Field("id")
     private String id;
-    @Field("cumulation")
-    private String cumulation;
+    @Field("kum")
+    private String kum;
     @Field("position")
     private String position;
     @Field("rank")
@@ -22,12 +22,12 @@ public class Rank {
         this.id = id;
     }
 
-    public String getCumulation() {
-        return cumulation;
+    public String getKum() {
+        return kum;
     }
 
-    public void setCumulation(String cumulation) {
-        this.cumulation = cumulation;
+    public void setKum(String kum) {
+        this.kum = kum;
     }
 
     public String getPosition() {
@@ -50,7 +50,7 @@ public class Rank {
     public String toString() {
         return "Rank{" +
                 "id='" + id + '\'' +
-                ", cumulation='" + cumulation + '\'' +
+                ", kum='" + kum + '\'' +
                 ", position='" + position + '\'' +
                 ", rank='" + rank + '\'' +
                 '}';

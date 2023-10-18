@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class MutationHistory {
@@ -14,9 +15,9 @@ public class MutationHistory {
     @Field("unit_name")
     private String UnitName;
     @Field("start_date")
-    private String startDate;
-    @Field("end_date")
-    private String endDate;
+    private LocalDate startDate;
+    @Field("sk_date")
+    private LocalDate skDate;
     @Field("sk_title")
     private String skTitle;
     @Field("sk_number")
@@ -63,20 +64,20 @@ public class MutationHistory {
         UnitName = unitName;
     }
 
-    public String getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(String startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
 
-    public String getEndDate() {
-        return endDate;
+    public LocalDate getSkDate() {
+        return skDate;
     }
 
-    public void setEndDate(String endDate) {
-        this.endDate = endDate;
+    public void setSkDate(LocalDate skDate) {
+        this.skDate = skDate;
     }
 
     public String getSkTitle() {

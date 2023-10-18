@@ -1,0 +1,102 @@
+[
+  {
+    "id": "0",
+    "name": "Tidak sekolah"
+  },
+  {
+    "id": "1",
+    "name": "PAUD"
+  },
+  {
+    "id": "2",
+    "name": "TK / sederajat"
+  },
+  {
+    "id": "3",
+    "name": "Putus SD"
+  },
+  {
+    "id": "4",
+    "name": "SD / sederajat"
+  },
+  {
+    "id": "5",
+    "name": "SMP / sederajat"
+  },
+  {
+    "id": "6",
+    "name": "SMA / sederajat"
+  },
+  {
+    "id": "7",
+    "name": "Paket A"
+  },
+  {
+    "id": "8",
+    "name": "Paket B"
+  },
+  {
+    "id": "9",
+    "name": "Paket C"
+  },
+  {
+    "id": "20",
+    "name": "D1"
+  },
+  {
+    "id": "21",
+    "name": "D2"
+  },
+  {
+    "id": "22",
+    "name": "D3"
+  },
+  {
+    "id": "23",
+    "name": "D4"
+  },
+  {
+    "id": "30",
+    "name": "S1"
+  },
+  {
+    "id": "31",
+    "name": "Profesi"
+  },
+  {
+    "id": "32",
+    "name": "Sp-1"
+  },
+  {
+    "id": "35",
+    "name": "S2"
+  },
+  {
+    "id": "36",
+    "name": "S2 Terapan"
+  },
+  {
+    "id": "37",
+    "name": "Sp-2"
+  },
+  {
+    "id": "40",
+    "name": "S3"
+  },
+  {
+    "id": "41",
+    "name": "S3 Terapan"
+  },
+  {
+    "id": "90",
+    "name": "Non formal"
+  },
+  {
+    "id": "91",
+    "name": "Informal"
+  },
+  {
+    "id": "99",
+    "name": "Lainnya"
+  }
+]

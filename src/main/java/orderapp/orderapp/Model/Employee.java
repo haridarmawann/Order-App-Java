@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import orderapp.orderapp.Model.DTO.Address;
+import orderapp.orderapp.Model.DTO.NewAccountRequest;
 import orderapp.orderapp.Model.DTO.PhysicalDescription;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -378,5 +379,26 @@ public class Employee {
 
     public void setUpdatedBy(String updatedBy) {
         this.updatedBy = updatedBy;
+    }
+
+    public void mapFromRequest(NewAccountRequest request) {
+        if (request.getName() != null) {
+            this.setName(request.getName());
+        }
+        if (request.getNip() != null) {
+            this.setNip(request.getNip());
+        }
+        if (request.getEmail() != null){
+            this.setEmail(request.getEmail());
+        }
+        if (request.getNidn() != null){
+            this.setNidn(request.getNidn());
+        }
+        if (request.getType() != null) {
+            this.setType(request.getType());
+        }
+        if (request.getTypeName() != null){
+            this.setTypeName(request.getTypeName());
+        }
     }
 }
