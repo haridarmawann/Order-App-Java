@@ -6,13 +6,13 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import orderapp.orderapp.Model.DTO.Address;
 import orderapp.orderapp.Model.DTO.NewAccountRequest;
 import orderapp.orderapp.Model.DTO.PhysicalDescription;
+import orderapp.orderapp.tools.AppHelper;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 @Document("employee")
@@ -400,5 +400,7 @@ public class Employee {
         if (request.getTypeName() != null){
             this.setTypeName(request.getTypeName());
         }
+        String password = new AppHelper().generatePassword(7);
+        this.setPassword(password);
     }
 }

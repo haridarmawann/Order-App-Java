@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public class MutationHistory {
+public class Mutation {
     @Id
     private String id;
     @Field("user_id")
