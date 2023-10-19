@@ -1,10 +1,13 @@
 package orderapp.orderapp.Model.DTO;
 
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.time.LocalDate;
 
+@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class NewAccountRequest {
 
     @Id

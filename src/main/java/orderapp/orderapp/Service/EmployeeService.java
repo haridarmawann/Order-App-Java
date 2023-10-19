@@ -59,12 +59,16 @@ public class EmployeeService {
     }
 
     public Mutation createFirstJob(String userId, NewAccountRequest request,LocalDateTime now) {
-        LocalDate startDate = LocalDate.parse(request.getStartDate());
+
+
         LocalDate skDate = LocalDate.parse(request.getSkDate());
         Mutation mutation = new Mutation();
         mutation.setUserId(userId);
         mutation.setUnitName(request.getWorkUnitName());
-        mutation.setStartDate(startDate);
+        if (request.getStartDate() != null){
+            LocalDate startDate = LocalDate.parse(request.getStartDate());
+            mutation.setStartDate(startDate);
+        }
         mutation.setSkDate(skDate);
         mutation.setSkFile(request.getSkFile());
         mutation.setFirst(true);
