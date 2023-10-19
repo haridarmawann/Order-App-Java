@@ -60,7 +60,7 @@ public class Employee {
     @Field("birth_file")
     private String birthFile;
     @Field("status")
-    private String status; // aktif,pensiun, meninggal,tugas belajar,izin belajar,berhenti, dipecat
+    private Integer status; // aktif,pensiun, meninggal,tugas belajar,izin belajar,berhenti, dipecat
     @Field("type")
     private String type; // jenis kepegawaian
     @Field("type_name")
@@ -261,11 +261,11 @@ public class Employee {
         this.birthFile = birthFile;
     }
 
-    public String getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
@@ -381,7 +381,7 @@ public class Employee {
         this.updatedBy = updatedBy;
     }
 
-    public void mapFromRequest(NewAccountRequest request) {
+    public void mapFromRequestNewEmployee(NewAccountRequest request) {
         if (request.getName() != null) {
             this.setName(request.getName());
         }
@@ -400,7 +400,18 @@ public class Employee {
         if (request.getTypeName() != null){
             this.setTypeName(request.getTypeName());
         }
+        if (request.getWorkUnitId() != null){
+            this.setWorkUnitId(request.getWorkUnitId());
+        }
+        if (request.getWorkInit() != null){
+            this.setWorkInit(request.getWorkInit());
+        }
+        if (request.getWorkUnitName() != null){
+            this.setWorkUnitName(request.getWorkUnitName());
+        }
         String password = new AppHelper().generatePassword(7);
         this.setPassword(password);
+        this.setStatus(1);
+        this.setDeleted(false);
     }
 }

@@ -28,10 +28,10 @@ public class EmployeeService {
 
     // TODO: 19/10/2023 send password to email user
     // TODO: 19/10/2023 created filter user simsdm
-    // 
+
 
     public List<Employee> getAllEmployee(){
-        return employeeRepository.findAll();
+        return employeeRepository.findAllEmployeeByIsDeleted(false);
     }
     public Optional<Employee> getEmployeeById(String id){
         return employeeRepository.findById(id);
@@ -40,30 +40,29 @@ public class EmployeeService {
         return null;
     }
 
-    public Employee createNewUser(NewAccountRequest request) {
+    public String createNewUser(NewAccountRequest request) {
         LocalDateTime now = new AppHelper().getCurrentTime();
         Employee employee = createEmployeeFromRequest(request,now);
-        Mutation mutation = createFirstJob(employee.getUserId(), request,now);
+        Mutation mutation = createFirstJob(employee.getId(), request,now);
         mutationRepository.save(mutation);
-        return employeeRepository.save(employee);
+
+        return employee.getId();
     }
 
     public Employee createEmployeeFromRequest(NewAccountRequest request,LocalDateTime now) {
         Employee employee = new Employee();
-        employee.mapFromRequest(request);
-
-
+        employee.mapFromRequestNewEmployee(request);
+        employee.setUserId(request.getUserId());
         employee.setCreatedAt(now);
         employee.setUpdatedAt(now);
-        return employee;
+        return employeeRepository.save(employee);
     }
 
     public Mutation createFirstJob(String userId, NewAccountRequest request,LocalDateTime now) {
-
-
         LocalDate skDate = LocalDate.parse(request.getSkDate());
         Mutation mutation = new Mutation();
         mutation.setUserId(userId);
+        mutation.setUserIdSimsdm(request.getUserId());
         mutation.setUnitName(request.getWorkUnitName());
         if (request.getStartDate() != null){
             LocalDate startDate = LocalDate.parse(request.getStartDate());
@@ -77,6 +76,8 @@ public class EmployeeService {
         mutation.setUpdatedAt(now);
         return mutation;
     }
+
+
     
 
 

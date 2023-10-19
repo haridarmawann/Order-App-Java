@@ -17,6 +17,8 @@ public class Mutation {
     private String id;
     @Field("user_id")
     private String userId;
+    @Field("user_id_simsdm")
+    private String userIdSimsdm;
     @Field("unit_name")
     private String UnitName;
     @Field("start_date")
@@ -59,6 +61,14 @@ public class Mutation {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public String getUserIdSimsdm() {
+        return userIdSimsdm;
+    }
+
+    public void setUserIdSimsdm(String userIdSimsdm) {
+        this.userIdSimsdm = userIdSimsdm;
     }
 
     public String getUnitName() {
